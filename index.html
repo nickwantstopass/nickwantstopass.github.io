@@ -1,48 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>BRICK BREAKER</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
-  <title>Sneaker Quiz</title>
-  <link href ="style.css" rel ="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <script src = "main.js"></script>
-
+    <style>
+        *{
+            font-family: 'Open Sans', sans-serif;
+        }
+        #sound{
+            width: 30px;
+            height : 30px;
+            cursor: pointer;
+            position: absolute;
+            top : 465px;
+            left : 15px;
+        }
+        #gameover{
+            position: absolute;
+            width : 400px;
+            height: 500px;
+            background: rgba(0,0,0,0.5);
+            display: none;
+        }
+        #youwon{
+            width: 100px;
+            position: absolute;
+            top : 200px;
+            left : 150px;
+            display: none;
+        }
+        #youlose{
+            width:400px;
+            position: absolute;
+            top: 100px;
+            left : 0px;
+            display: none;
+        }
+        #restart{
+            position: absolute;
+            top: 310px;
+            left : 155px;
+            cursor: pointer;
+            font-size: 1.25em;
+            color : #FFF;
+        }
+    </style>
 </head>
-
 <body>
+    <div class="sound">
+        <img src="img/SOUND_ON.png" alt="" id="sound">
+    </div>
 
-<h1>Sneaker Heads Welcomed</h1>
+    <div id="gameover">
+        <img src="img/youwon.png" alt="" id="youwon">
+        <img src="img/gameover.png" alt="" id="youlose">
+        <div id="restart">Play Again!</div>
+    </div>
 
-<form id="quiz" name="quiz">
+    <canvas id="breakout" width="400" height="500"></canvas>
 
-  <p>What was the first retro Air Jordan?</p>
-
-  <input id="textbox" type="text" name="question1">
-
-  <p>What sneaker brand is well known for their slogan, "Just Do It!" ?</p>
-
-  <input type="radio" id="mc" name="question2" value="Nike"> Nike<br>
-  <input type="radio" id="mc" name="question2" value="Adidas"> Adidas<br>
-  <input type="radio" id="mc" name="question2" value="Vans"> Vans<br>
-
-  <p>What sneaker was worn in the movie "Space Jam" ft. Micheal Jordan ?</p>
-
-  <input type="radio" id="mc" name="question3" value="Space Jam 11"> Space Jam 11<br>
-  <input type="radio" id="mc" name="question3" value="Bugs Bunny 8"> Bugs Bunny 8<br>
-  <input type="radio" id="mc" name="question3" value="Daffy Duck 23"> Daffy Duck 23<br>
-
-  <input type="button"  id="button" value="I'm Done!" onclick="check();">
-
-
-</form>
-
-<div id="after_submit">
-
-  <p id="messages"></p>
-  <p id="number_correct"></p>
-  <img id="pictures">
-
-</div>
-
-
+    <script src="components.js"></script>
+    <script src="game.js"></script>
 </body>
+</html>
